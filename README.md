@@ -1,4 +1,4 @@
-# Env-Ninja
+# Env-ninja
 
 ## How to build it
 1. Build: `go build .`
@@ -17,4 +17,3 @@ export name=“John”
 My name is John!!
 
 ```
-
