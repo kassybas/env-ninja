@@ -35,6 +35,7 @@ func renderTemplateToFile(m map[string]string, text, outFileName string) {
 	t, err := template.New("templ").Parse(text)
 	check(err)
 	err = t.Execute(f, m)
+	fmt.Printf("Executed template, saved file: %s\n", outFileName)
 	f.Close()
 }
 

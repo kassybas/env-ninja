@@ -3,8 +3,10 @@ WORKDIR /app/
 COPY . /app
 RUN GOOS=linux go build -o env-ninja .
 
-FROM alpine:latest
-WORKDIR /app/
-COPY --from=0 /app/env-ninja .
-CMD ["/app/env-ninja"]
+FROM scratch
+COPY --from=0 /app/env-ninja /app/
+ENV PATH /app/:$PATH
+WORKDIR /workdir/
+
+ENTRYPOINT ["env-ninja"]
 
