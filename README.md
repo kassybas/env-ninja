@@ -9,7 +9,7 @@
 My name is {{.name}}!!
 ```
 2. Use environment variables:
-export name=“John”
+`export name=“John”`
 3. Run it:
 `./env-ninja example.txt.tpl`
 4. Profit:

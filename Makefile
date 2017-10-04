@@ -3,6 +3,9 @@ IMAGE_NAME?=bkutassy/env-ninja
 local:
 	go build -o env-ninja .
 
+linux:
+	GOOS=linux go build -o env-ninja .
+
 build:
 	docker build -t $(IMAGE_NAME):latest .
 
