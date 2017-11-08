@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"html/template"
 	"io/ioutil"
 	"os"
@@ -37,7 +36,7 @@ func renderTemplateToFile(m map[string]string, text, outFileName string) {
 	t, err := template.New("templ").Parse(text)
 	check(err)
 	err = t.Execute(f, m)
-	fmt.Printf("Executed template, saved file: %s\n", outFileName)
+	log.Infoln("Executed template, saved file: %s\n", outFileName)
 	f.Close()
 }
 
@@ -46,7 +45,7 @@ func main() {
 
 	fileName := os.Args[1]
 	if !strings.HasSuffix(fileName, ".tpl") {
-		fmt.Println("No template file given: .tpl extension missing!")
+		log.Infoln("No template file given: .tpl extension missing!")
 	}
 	text := readFile(fileName)
 	m := createMap()
