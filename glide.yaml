@@ -1,0 +1,9 @@
+package: github.com/kassybas/env-ninja
+import:
+- package: github.com/urfave/cli
+  version: ^1.19.1
+- package: github.com/fatih/color
+  version: ^1.5.0
+- package: gopkg.in/yaml.v2
+- package: github.com/sirupsen/logrus
+  version: ~1.0.2

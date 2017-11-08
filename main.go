@@ -6,6 +6,8 @@ import (
 	"io/ioutil"
 	"os"
 	"strings"
+
+	log "github.com/sirupsen/logrus"
 )
 
 func check(err error) {
@@ -40,6 +42,8 @@ func renderTemplateToFile(m map[string]string, text, outFileName string) {
 }
 
 func main() {
+	log.SetLevel(log.DebugLevel)
+
 	fileName := os.Args[1]
 	if !strings.HasSuffix(fileName, ".tpl") {
 		fmt.Println("No template file given: .tpl extension missing!")
